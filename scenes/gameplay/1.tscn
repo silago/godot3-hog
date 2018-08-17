@@ -1,0 +1,514 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://resources/tilemaps/map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/sprites/environment/night.jpg" type="Texture" id=2]
+[ext_resource path="res://resources/sprites/environment/trees.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/environment/raindrops.png" type="Texture" id=4]
+[ext_resource path="res://assets/KinematicBody2D.tscn" type="PackedScene" id=5]
+
+[sub_resource type="VisualScriptFunction" id=19]
+
+resource_name = "_process"
+_default_input_values = [  ]
+argument_count = 1
+argument_1/type = 3
+argument_1/name = "delta"
+sequenced/sequenced = true
+stack/size = 256
+stack/stackless = false
+rpc/mode = 0
+
+[sub_resource type="VisualScriptPropertyGet" id=42]
+
+_default_input_values = [  ]
+set_mode = 1
+base_type = "Node2D"
+type_cache = 5
+node_path = NodePath("../DialoguePoint")
+property = "position"
+index = ""
+
+[sub_resource type="VisualScriptFunctionCall" id=43]
+
+_default_input_values = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+call_mode = 3
+base_type = "Object"
+basic_type = 5
+argument_cache = {
+"args": [  ],
+"default_args": [  ],
+"flags": 1,
+"id": 0,
+"name": "",
+"return": {
+"class_name": "",
+"hint": 0,
+"hint_string": "",
+"name": "",
+"type": 0,
+"usage": 7
+}
+}
+function = "distance_to"
+validate = true
+
+[sub_resource type="VisualScriptPropertyGet" id=44]
+
+_default_input_values = [  ]
+set_mode = 1
+base_type = "KinematicBody2D"
+type_cache = 5
+node_path = NodePath("../PlayerContainer/KinematicBody2D")
+property = "position"
+index = ""
+
+[sub_resource type="VisualScriptVariableGet" id=45]
+
+_default_input_values = [  ]
+var_name = "diff"
+
+[sub_resource type="VisualScriptCondition" id=46]
+
+_default_input_values = [ false ]
+
+[sub_resource type="VisualScriptOperator" id=47]
+
+_default_input_values = [ null, null ]
+operator = 4
+type = 0
+
+[sub_resource type="VisualScriptFunctionCall" id=48]
+
+_default_input_values = [  ]
+call_mode = 1
+base_type = "Label"
+node_path = NodePath("../DialoguePoint/Label")
+argument_cache = {
+"args": [  ],
+"default_args": [  ],
+"flags": 1,
+"id": 0,
+"name": "",
+"return": {
+"class_name": "",
+"hint": 0,
+"hint_string": "",
+"name": "",
+"type": 0,
+"usage": 7
+}
+}
+function = "show"
+validate = true
+rpc_call_mode = 0
+
+[sub_resource type="VisualScriptFunctionCall" id=49]
+
+_default_input_values = [  ]
+call_mode = 1
+base_type = "Label"
+node_path = NodePath("../DialoguePoint/Label")
+argument_cache = {
+"args": [  ],
+"default_args": [  ],
+"flags": 1,
+"id": 0,
+"name": "",
+"return": {
+"class_name": "",
+"hint": 0,
+"hint_string": "",
+"name": "",
+"type": 0,
+"usage": 7
+}
+}
+function = "hide"
+validate = true
+rpc_call_mode = 0
+
+[sub_resource type="VisualScriptFunction" id=8]
+
+resource_name = "Dialogue"
+_default_input_values = [  ]
+argument_count = 0
+sequenced/sequenced = true
+stack/size = 256
+stack/stackless = false
+rpc/mode = 0
+_sections_unfolded = [ "argument_2" ]
+
+[sub_resource type="VisualScriptCondition" id=14]
+
+_default_input_values = [ false ]
+
+[sub_resource type="VisualScriptFunctionCall" id=39]
+
+_default_input_values = [ Vector2( 0, 0 ), Vector2( 0, 0 ) ]
+call_mode = 0
+base_type = "Node2D"
+argument_cache = {
+"args": [ {
+"class_name": "",
+"hint": 0,
+"hint_string": "",
+"name": "PlayerTransform",
+"type": 5,
+"usage": 7
+}, {
+"class_name": "",
+"hint": 0,
+"hint_string": "",
+"name": "NodeTransform",
+"type": 5,
+"usage": 7
+} ],
+"default_args": [  ],
+"flags": 1,
+"id": 0,
+"name": "isPlayerNear",
+"return": {
+"class_name": "",
+"hint": 0,
+"hint_string": "",
+"name": "",
+"type": 0,
+"usage": 7
+}
+}
+function = "isPlayerNear"
+validate = true
+rpc_call_mode = 0
+
+[sub_resource type="VisualScriptPropertyGet" id=40]
+
+_default_input_values = [  ]
+set_mode = 1
+base_type = "KinematicBody2D"
+type_cache = 5
+node_path = NodePath("../PlayerContainer/KinematicBody2D")
+property = "position"
+index = ""
+
+[sub_resource type="VisualScriptPropertyGet" id=41]
+
+_default_input_values = [  ]
+set_mode = 1
+base_type = "Node2D"
+type_cache = 5
+node_path = NodePath("../DialoguePoint")
+property = "position"
+index = ""
+
+[sub_resource type="VisualScriptFunction" id=1]
+
+resource_name = "isPlayerNear"
+_default_input_values = [  ]
+argument_count = 2
+argument_1/type = 5
+argument_1/name = "PlayerTransform"
+argument_2/type = 5
+argument_2/name = "NodeTransform"
+sequenced/sequenced = true
+stack/size = 256
+stack/stackless = false
+rpc/mode = 0
+_sections_unfolded = [ "argument_1", "argument_2" ]
+
+[sub_resource type="VisualScriptOperator" id=4]
+
+_default_input_values = [ 0.0, 0.0 ]
+operator = 7
+type = 3
+
+[sub_resource type="VisualScriptOperator" id=5]
+
+_default_input_values = [ null, null ]
+operator = 4
+type = 0
+
+[sub_resource type="VisualScriptVariableGet" id=6]
+
+_default_input_values = [  ]
+var_name = "diff"
+
+[sub_resource type="VisualScriptReturn" id=7]
+
+_default_input_values = [ false ]
+return_enabled = true
+return_type = 1
+
+[sub_resource type="VisualScriptBuiltinFunc" id=33]
+
+_default_input_values = [ null ]
+function = 55
+
+[sub_resource type="VisualScriptPropertyGet" id=36]
+
+_default_input_values = [ Vector2( 0, 0 ) ]
+set_mode = 3
+base_type = "Object"
+type_cache = 3
+basic_type = 5
+property = "x"
+
+[sub_resource type="VisualScriptPropertyGet" id=37]
+
+_default_input_values = [ Vector2( 0, 0 ) ]
+set_mode = 3
+base_type = "Object"
+type_cache = 3
+basic_type = 5
+property = "x"
+
+[sub_resource type="VisualScript" id=9]
+
+data = {
+"base_type": "Node2D",
+"functions": [ {
+"data_connections": [ 51, 0, 52, 0, 58, 0, 57, 0, 56, 0, 58, 0, 55, 0, 52, 1, 52, 0, 58, 1 ],
+"function_id": 25,
+"name": "_process",
+"nodes": [ 25, Vector2( 0, 0 ), SubResource( 19 ), 51, Vector2( -216, 198 ), SubResource( 42 ), 52, Vector2( 72, 162 ), SubResource( 43 ), 55, Vector2( -270, 378 ), SubResource( 44 ), 56, Vector2( 144, 306 ), SubResource( 45 ), 57, Vector2( 324, -36 ), SubResource( 46 ), 58, Vector2( 414, 270 ), SubResource( 47 ), 59, Vector2( 558, 54 ), SubResource( 48 ), 60, Vector2( 558, 144 ), SubResource( 49 ) ],
+"scroll": Vector2( -255.872, -88.3381 ),
+"sequence_connections": [ 25, 0, 57, 57, 0, 59, 57, 1, 60 ]
+}, {
+"data_connections": [ 48, 0, 20, 0, 49, 0, 48, 0, 50, 0, 48, 1 ],
+"function_id": 13,
+"name": "Dialogue",
+"nodes": [ 13, Vector2( 702, -162 ), SubResource( 8 ), 20, Vector2( 1062, -90 ), SubResource( 14 ), 48, Vector2( 756, 108 ), SubResource( 39 ), 49, Vector2( 36, 0 ), SubResource( 40 ), 50, Vector2( 54, 162 ), SubResource( 41 ) ],
+"scroll": Vector2( 42.6944, -398 ),
+"sequence_connections": [ 48, 0, 20, 13, 0, 48 ]
+}, {
+"data_connections": [ 43, 0, 10, 0, 12, 0, 11, 0, 11, 0, 16, 0, 43, 0, 39, 0, 1, 0, 43, 0, 1, 1, 44, 0, 44, 0, 10, 1, 10, 0, 11, 1 ],
+"function_id": 1,
+"name": "isPlayerNear",
+"nodes": [ 1, Vector2( -396, 18 ), SubResource( 1 ), 10, Vector2( 432, 360 ), SubResource( 4 ), 11, Vector2( 666, 270 ), SubResource( 5 ), 12, Vector2( 450, 198 ), SubResource( 6 ), 16, Vector2( 684, 0 ), SubResource( 7 ), 39, Vector2( 396, 36 ), SubResource( 33 ), 43, Vector2( -72, 90 ), SubResource( 36 ), 44, Vector2( -198, 198 ), SubResource( 37 ) ],
+"scroll": Vector2( -266.698, -164.333 ),
+"sequence_connections": [ 39, 0, 16, 1, 0, 39 ]
+} ],
+"signals": [  ],
+"variables": [ {
+"default_value": 30.0,
+"export": false,
+"hint": 0,
+"hint_string": "",
+"name": "diff",
+"type": 3,
+"usage": 7
+}, {
+"default_value": null,
+"export": false,
+"hint": 0,
+"hint_string": "",
+"name": "new_variable_3",
+"type": 0,
+"usage": 7
+}, {
+"default_value": "test",
+"export": false,
+"hint": 0,
+"hint_string": "",
+"name": "tmp",
+"type": 1,
+"usage": 7
+}, {
+"default_value": null,
+"export": false,
+"hint": 0,
+"hint_string": "",
+"name": "new_variable_4",
+"type": 0,
+"usage": 7
+}, {
+"default_value": null,
+"export": false,
+"hint": 0,
+"hint_string": "",
+"name": "new_variable_2",
+"type": 0,
+"usage": 7
+}, {
+"default_value": "test",
+"export": false,
+"hint": 0,
+"hint_string": "",
+"name": "new_variable",
+"type": 4,
+"usage": 7
+} ]
+}
+
+[sub_resource type="ParticlesMaterial" id=10]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1200, 1, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = false
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( -10, 98, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 1.0
+angle = 45.0
+angle_random = 0.0
+scale = 1.5
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[node name="root" type="Node" index="0"]
+
+[node name="Quest" type="Node2D" parent="." index="0"]
+
+script = SubResource( 9 )
+
+[node name="map" parent="." index="1" instance=ExtResource( 1 )]
+
+[node name="background" type="Node" parent="." index="2"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="background" index="0"]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="background/ParallaxBackground" index="0"]
+
+position = Vector2( 608, 160 )
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1200, 0 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="background/ParallaxBackground/ParallaxLayer" index="0"]
+
+visible = false
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 640, 480 )
+_sections_unfolded = [ "Region" ]
+
+[node name="Sprite2" type="Sprite" parent="background/ParallaxBackground/ParallaxLayer" index="1"]
+
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 640, 480 )
+_sections_unfolded = [ "Region" ]
+
+[node name="enviroment" type="Node" parent="." index="3"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="enviroment" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+scroll_offset = Vector2( 0, 0 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = false
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="enviroment/ParallaxBackground" index="0"]
+
+position = Vector2( 608, 128 )
+motion_scale = Vector2( 1, 1 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 1200, 0 )
+_sections_unfolded = [ "Material", "Motion", "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="enviroment/ParallaxBackground/ParallaxLayer" index="0"]
+
+visible = false
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 800, 600 )
+_sections_unfolded = [ "Region", "Transform" ]
+
+[node name="Particles2D" type="Particles2D" parent="enviroment/ParallaxBackground/ParallaxLayer" index="1"]
+
+position = Vector2( 0, -272 )
+emitting = true
+amount = 300
+lifetime = 5.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 3.0
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 1400, 1000 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 10 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="PlayerContainer" type="Node2D" parent="." index="4"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="KinematicBody2D" parent="PlayerContainer" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 352, 256 )
+
+[node name="DialoguePoint" type="Node2D" parent="." index="5"]
+
+position = Vector2( 640, 256 )
+
+[node name="Label" type="Label" parent="DialoguePoint" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Hello"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility" ]
+
+
