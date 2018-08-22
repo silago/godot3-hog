@@ -1,6 +1,0 @@
-/home/silago/work/godot3-helldehog/.mono/temp/bin/Tools/gogot3-helldehog.dll
-/home/silago/work/godot3-helldehog/.mono/temp/bin/Tools/gogot3-helldehog.pdb
-/home/silago/work/godot3-helldehog/.mono/temp/obj/Tools/gogot3-helldehog.csprojResolveAssemblyReference.cache
-/home/silago/work/godot3-helldehog/.mono/temp/obj/Tools/gogot3-helldehog.csproj.CoreCompileInputs.cache
-/home/silago/work/godot3-helldehog/.mono/temp/obj/Tools/gogot3-helldehog.dll
-/home/silago/work/godot3-helldehog/.mono/temp/obj/Tools/gogot3-helldehog.pdb

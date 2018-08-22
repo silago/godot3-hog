@@ -53,6 +53,7 @@
     <Compile Include="scripts\GUI\Menu\MainMenu.cs" />
     <Compile Include="scripts\player\player.cs" />
     <Compile Include="scripts\player\PlayerBody.cs" />
+    <Compile Include="scripts\Scenes\ExitPoint.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

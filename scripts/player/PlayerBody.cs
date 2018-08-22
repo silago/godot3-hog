@@ -31,6 +31,8 @@ public class PlayerBody : KinematicBody2D
 	public override void _Ready()
     {
 	    this.sprite = GetNode(spritePath) as Sprite;
+	    
+        this.SetMeta("name","player");
     }
 
 
